@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "008697c7-1c38-482a-aed4-bd4832bdad61",
+		"name": "Posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "5702474-008697c7-1c38-482a-aed4-bd4832bdad61"
+	},
+	"item": [
+		{
+			"name": "Get all TODOS",
+			"id": "fb56f80b-69b5-4124-93a5-61f9487208c4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a TODO",
+			"id": "bab2440c-d1c5-4bea-804c-3d2476def5be",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New TODO\",\r\n    \"body\": \"This is a new TODO body\",\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/1/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"1",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a TODO",
+			"id": "b413bec9-d780-4694-a3a3-58b640a2a4b9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Updated post\",\r\n    \"body\": \"This is an updated post\",\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/2",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a TODO Copy",
+			"id": "2d828967-fa48-46ab-95c6-6c26c0bdd0f6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Updated post\",\r\n    \"body\": \"This is an updated post\",\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/2",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "42c9b188-e426-45a5-bf6e-2792de503bea",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2d9b3167-80c4-4f9d-a5b2-33cf3eb308dd",
+				"type": "text/javascript",
+				"exec": [
+					"if (pm.request.method === \"POST\") {",
+					"    pm.test(\"Status code is 201\", function () {",
+					"        pm.response.to.have.status(201); //",
+					"    });",
+					"}",
+					"if (pm.request.method === \"GET\" || \"PUT\" || \"DELETE\") {",
+					"    pm.test(\"Status code is 200\", function () {",
+					"        pm.response.to.have.status(200);",
+					"    });",
+					"}"
+				]
+			}
+		}
+	]
+}

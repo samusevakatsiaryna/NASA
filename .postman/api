@@ -5,7 +5,7 @@ id = f262bbaf-a8e4-4dc4-9d18-c1e78f5fb578
 
 [relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"5702474-008697c7-1c38-482a-aed4-bd4832bdad61","path":"NASA.json","metaData":{}}
+files[] = {"id":"5702474-008697c7-1c38-482a-aed4-bd4832bdad61","path":"Posts.json","metaData":{}}
 
 [relations.collections.metaData]
 
